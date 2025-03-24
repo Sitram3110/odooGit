@@ -1,0 +1,87 @@
+2025-03-24 14:34:17 +07 LOG:  database system was shut down at 2025-03-24 14:32:23 +07
+2025-03-24 14:35:43 +07 ERROR:  could not serialize access due to concurrent update
+2025-03-24 14:35:43 +07 STATEMENT:  
+	                WITH visitor AS (
+	                    
+	            INSERT INTO website_visitor (
+	                partner_id, access_token, last_connection_datetime, visit_count, lang_id,
+	                website_id, timezone, write_uid, create_uid, write_date, create_date, country_id)
+	            VALUES (
+	                3, 3, now() at time zone 'UTC', 1, 1,
+	                1, 'Asia/Saigon', 2, 2,
+	                now() at time zone 'UTC', now() at time zone 'UTC', (
+	                    SELECT id FROM res_country WHERE code = NULL
+	                )
+	            )
+	            ON CONFLICT (access_token)
+	            DO UPDATE SET
+	                last_connection_datetime=excluded.last_connection_datetime,
+	                visit_count = CASE WHEN website_visitor.last_connection_datetime < NOW() AT TIME ZONE 'UTC' - INTERVAL '8 hours'
+	                                    THEN website_visitor.visit_count + 1
+	                                    ELSE website_visitor.visit_count
+	                                END
+	            RETURNING id, CASE WHEN create_date = now() at time zone 'UTC' THEN 'inserted' ELSE 'updated' END AS upsert
+	        , 'http://localhost:8069/' AS url, 4 AS page_id
+	                ), track AS (
+	                    INSERT INTO website_track (visitor_id, url, page_id, visit_datetime)
+	                    SELECT id, url, page_id::integer, now() at time zone 'UTC' FROM visitor
+	                )
+	                SELECT id, upsert from visitor;
+	                
+2025-03-24 14:35:43 +07 ERROR:  could not serialize access due to concurrent update
+2025-03-24 14:35:43 +07 STATEMENT:  
+	                WITH visitor AS (
+	                    
+	            INSERT INTO website_visitor (
+	                partner_id, access_token, last_connection_datetime, visit_count, lang_id,
+	                website_id, timezone, write_uid, create_uid, write_date, create_date, country_id)
+	            VALUES (
+	                3, 3, now() at time zone 'UTC', 1, 1,
+	                1, 'Asia/Saigon', 2, 2,
+	                now() at time zone 'UTC', now() at time zone 'UTC', (
+	                    SELECT id FROM res_country WHERE code = NULL
+	                )
+	            )
+	            ON CONFLICT (access_token)
+	            DO UPDATE SET
+	                last_connection_datetime=excluded.last_connection_datetime,
+	                visit_count = CASE WHEN website_visitor.last_connection_datetime < NOW() AT TIME ZONE 'UTC' - INTERVAL '8 hours'
+	                                    THEN website_visitor.visit_count + 1
+	                                    ELSE website_visitor.visit_count
+	                                END
+	            RETURNING id, CASE WHEN create_date = now() at time zone 'UTC' THEN 'inserted' ELSE 'updated' END AS upsert
+	        , 'http://localhost:8069/' AS url, 4 AS page_id
+	                ), track AS (
+	                    INSERT INTO website_track (visitor_id, url, page_id, visit_datetime)
+	                    SELECT id, url, page_id::integer, now() at time zone 'UTC' FROM visitor
+	                )
+	                SELECT id, upsert from visitor;
+	                
+2025-03-24 14:39:17 +07 LOG:  checkpoint starting: time
+2025-03-24 14:39:22 +07 LOG:  checkpoint complete: wrote 51 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=5.347 s, sync=0.021 s, total=5.373 s; sync files=49, longest=0.002 s, average=0.001 s; distance=117 kB, estimate=117 kB; lsn=0/D5B7180, redo lsn=0/D5B7128
+2025-03-24 14:44:17 +07 LOG:  checkpoint starting: time
+2025-03-24 14:44:20 +07 LOG:  checkpoint complete: wrote 21 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=2.204 s, sync=0.013 s, total=2.224 s; sync files=18, longest=0.002 s, average=0.001 s; distance=84 kB, estimate=114 kB; lsn=0/D5CC3C8, redo lsn=0/D5CC338
+2025-03-24 14:49:17 +07 LOG:  checkpoint starting: time
+2025-03-24 14:49:21 +07 LOG:  checkpoint complete: wrote 45 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.794 s, sync=0.049 s, total=4.859 s; sync files=43, longest=0.009 s, average=0.002 s; distance=103 kB, estimate=113 kB; lsn=0/D5EE5C8, redo lsn=0/D5E61F0
+2025-03-24 14:54:17 +07 LOG:  checkpoint starting: time
+2025-03-24 14:54:19 +07 LOG:  checkpoint complete: wrote 23 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=2.220 s, sync=0.036 s, total=2.274 s; sync files=19, longest=0.009 s, average=0.002 s; distance=78 kB, estimate=110 kB; lsn=0/D5F9E50, redo lsn=0/D5F9DC0
+2025-03-24 15:26:01 +07 LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-03-24 15:26:01 +07 LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-03-24 15:26:01 +07 LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-03-24 15:26:01 +07 LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-03-24 15:26:01 +07 LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-03-24 15:26:01 +07 LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-03-24 15:26:01 +07 LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-03-24 15:26:01 +07 LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-03-24 15:26:01 +07 LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-03-24 15:29:44 +07 LOG:  checkpoint starting: time
+2025-03-24 15:29:46 +07 LOG:  checkpoint complete: wrote 21 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.974 s, sync=0.015 s, total=1.996 s; sync files=21, longest=0.002 s, average=0.001 s; distance=42 kB, estimate=103 kB; lsn=0/D604938, redo lsn=0/D6048E0

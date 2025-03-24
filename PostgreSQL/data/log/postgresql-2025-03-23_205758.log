@@ -1,0 +1,49 @@
+2025-03-23 20:57:58 +07 LOG:  database system was shut down at 2025-03-23 19:56:55 +07
+2025-03-23 21:02:58 +07 LOG:  checkpoint starting: time
+2025-03-23 21:02:58 +07 LOG:  checkpoint complete: wrote 2 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.010 s; sync files=1, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/B21AA68, redo lsn=0/B21AA10
+2025-03-23 22:20:27 +07 ERROR:  could not serialize access due to concurrent update
+2025-03-23 22:20:27 +07 STATEMENT:  
+	            WITH last_cron_progress AS (
+	                SELECT id as progress_id, cron_id, timed_out_counter, done, remaining
+	                FROM ir_cron_progress
+	                WHERE cron_id = 24
+	                ORDER BY id DESC
+	                LIMIT 1
+	            )
+	            SELECT *
+	            FROM ir_cron
+	            LEFT JOIN last_cron_progress lcp ON lcp.cron_id = ir_cron.id
+	            WHERE ir_cron.active = true
+	              AND (nextcall <= (now() at time zone 'UTC')
+	                OR EXISTS (
+	                    SELECT cron_id
+	                    FROM ir_cron_trigger
+	                    WHERE call_at <= (now() at time zone 'UTC')
+	                      AND cron_id = ir_cron.id
+	                )
+	              )
+	              AND id = 24
+	            ORDER BY priority
+	            FOR NO KEY UPDATE SKIP LOCKED
+	        
+2025-03-23 22:22:58 +07 LOG:  checkpoint starting: time
+2025-03-23 22:23:03 +07 LOG:  checkpoint complete: wrote 46 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.688 s, sync=0.015 s, total=4.709 s; sync files=35, longest=0.001 s, average=0.001 s; distance=157 kB, estimate=157 kB; lsn=0/B241F70, redo lsn=0/B241F18
+2025-03-23 22:27:58 +07 LOG:  checkpoint starting: time
+2025-03-23 22:28:05 +07 LOG:  checkpoint complete: wrote 65 buffers (0.4%); 0 WAL file(s) added, 0 removed, 0 recycled; write=6.793 s, sync=0.022 s, total=6.819 s; sync files=53, longest=0.002 s, average=0.001 s; distance=217 kB, estimate=217 kB; lsn=0/B2786B0, redo lsn=0/B278620
+2025-03-23 22:32:58 +07 LOG:  checkpoint starting: time
+2025-03-23 22:33:08 +07 LOG:  checkpoint complete: wrote 99 buffers (0.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=10.687 s, sync=0.038 s, total=10.729 s; sync files=88, longest=0.001 s, average=0.001 s; distance=204 kB, estimate=216 kB; lsn=0/B2B37F0, redo lsn=0/B2AB8A8
+2025-03-23 22:37:58 +07 LOG:  checkpoint starting: time
+2025-03-23 22:38:07 +07 LOG:  checkpoint complete: wrote 83 buffers (0.5%); 0 WAL file(s) added, 0 removed, 0 recycled; write=8.916 s, sync=0.033 s, total=8.955 s; sync files=79, longest=0.001 s, average=0.001 s; distance=160 kB, estimate=210 kB; lsn=0/B2D3BA8, redo lsn=0/B2D3B18
+2025-03-23 22:42:58 +07 LOG:  checkpoint starting: time
+2025-03-23 22:43:08 +07 LOG:  checkpoint complete: wrote 89 buffers (0.5%); 0 WAL file(s) added, 0 removed, 0 recycled; write=9.556 s, sync=0.034 s, total=9.594 s; sync files=83, longest=0.001 s, average=0.001 s; distance=173 kB, estimate=207 kB; lsn=0/B3246A8, redo lsn=0/B2FEFC8
+2025-03-23 22:47:58 +07 LOG:  checkpoint starting: time
+2025-03-23 22:48:02 +07 LOG:  checkpoint complete: wrote 42 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.432 s, sync=0.012 s, total=4.449 s; sync files=25, longest=0.001 s, average=0.001 s; distance=250 kB, estimate=250 kB; lsn=0/B33D900, redo lsn=0/B33D8A8
+2025-03-23 22:57:58 +07 LOG:  checkpoint starting: time
+2025-03-23 22:58:01 +07 LOG:  checkpoint complete: wrote 26 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=2.481 s, sync=0.008 s, total=2.493 s; sync files=16, longest=0.002 s, average=0.001 s; distance=112 kB, estimate=236 kB; lsn=0/B359B10, redo lsn=0/B359AB8
+2025-03-23 23:17:58 +07 LOG:  checkpoint starting: time
+2025-03-23 23:17:59 +07 LOG:  checkpoint complete: wrote 7 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.648 s, sync=0.004 s, total=0.660 s; sync files=7, longest=0.001 s, average=0.001 s; distance=8 kB, estimate=213 kB; lsn=0/B35BD88, redo lsn=0/B35BD30
+2025-03-23 23:22:58 +07 LOG:  checkpoint starting: time
+2025-03-23 23:22:59 +07 LOG:  checkpoint complete: wrote 13 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.085 s, sync=0.006 s, total=1.095 s; sync files=11, longest=0.001 s, average=0.001 s; distance=43 kB, estimate=196 kB; lsn=0/B366D80, redo lsn=0/B366D28
+2025-03-23 23:42:58 +07 LOG:  checkpoint starting: time
+2025-03-23 23:42:59 +07 LOG:  checkpoint complete: wrote 13 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.286 s, sync=0.007 s, total=1.297 s; sync files=13, longest=0.001 s, average=0.001 s; distance=14 kB, estimate=178 kB; lsn=0/B36A670, redo lsn=0/B36A618
+2025-03-23 23:57:58 +07 LOG:  checkpoint starting: time

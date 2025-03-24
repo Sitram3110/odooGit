@@ -1,0 +1,39 @@
+2025-03-24 00:45:15 +07 LOG:  database system was shut down at 2025-03-24 00:43:52 +07
+2025-03-24 00:50:15 +07 LOG:  checkpoint starting: time
+2025-03-24 00:50:15 +07 LOG:  checkpoint complete: wrote 2 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.007 s; sync files=1, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/D2E9BB8, redo lsn=0/D2E9B60
+2025-03-24 13:16:36 +07 LOG:  checkpoint starting: time
+2025-03-24 13:16:52 +07 LOG:  checkpoint complete: wrote 151 buffers (0.9%); 0 WAL file(s) added, 0 removed, 0 recycled; write=16.075 s, sync=0.048 s, total=16.128 s; sync files=108, longest=0.002 s, average=0.001 s; distance=239 kB, estimate=239 kB; lsn=0/D329438, redo lsn=0/D3257A8
+2025-03-24 13:21:36 +07 LOG:  checkpoint starting: time
+2025-03-24 13:21:43 +07 LOG:  checkpoint complete: wrote 61 buffers (0.4%); 0 WAL file(s) added, 0 removed, 0 recycled; write=6.516 s, sync=0.027 s, total=6.548 s; sync files=60, longest=0.002 s, average=0.001 s; distance=108 kB, estimate=226 kB; lsn=0/D3477D8, redo lsn=0/D340A10
+2025-03-24 13:26:36 +07 LOG:  checkpoint starting: time
+2025-03-24 13:26:40 +07 LOG:  checkpoint complete: wrote 44 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.464 s, sync=0.016 s, total=4.484 s; sync files=40, longest=0.001 s, average=0.001 s; distance=140 kB, estimate=217 kB; lsn=0/D363B48, redo lsn=0/D363AF0
+2025-03-24 13:31:36 +07 LOG:  checkpoint starting: time
+2025-03-24 13:31:42 +07 LOG:  checkpoint complete: wrote 55 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=5.829 s, sync=0.024 s, total=5.857 s; sync files=53, longest=0.001 s, average=0.001 s; distance=103 kB, estimate=206 kB; lsn=0/D37D9E8, redo lsn=0/D37D990
+2025-03-24 13:56:36 +07 LOG:  checkpoint starting: time
+2025-03-24 13:56:40 +07 LOG:  checkpoint complete: wrote 40 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.012 s, sync=0.012 s, total=4.028 s; sync files=28, longest=0.002 s, average=0.001 s; distance=130 kB, estimate=198 kB; lsn=0/D39E548, redo lsn=0/D39E4F0
+2025-03-24 14:01:36 +07 LOG:  checkpoint starting: time
+2025-03-24 14:01:49 +07 LOG:  checkpoint complete: wrote 121 buffers (0.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=12.694 s, sync=0.037 s, total=12.735 s; sync files=89, longest=0.002 s, average=0.001 s; distance=170 kB, estimate=195 kB; lsn=0/D3C8F50, redo lsn=0/D3C8EC0
+2025-03-24 14:11:36 +07 LOG:  checkpoint starting: time
+2025-03-24 14:11:46 +07 LOG:  checkpoint complete: wrote 91 buffers (0.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=9.741 s, sync=0.035 s, total=9.780 s; sync files=84, longest=0.002 s, average=0.001 s; distance=160 kB, estimate=192 kB; lsn=0/D3F12D0, redo lsn=0/D3F1240
+2025-03-24 14:16:36 +07 LOG:  checkpoint starting: time
+2025-03-24 14:16:49 +07 LOG:  checkpoint complete: wrote 131 buffers (0.8%); 0 WAL file(s) added, 0 removed, 0 recycled; write=13.730 s, sync=0.052 s, total=13.786 s; sync files=125, longest=0.001 s, average=0.001 s; distance=206 kB, estimate=206 kB; lsn=0/D44D610, redo lsn=0/D424D38
+2025-03-24 14:21:36 +07 LOG:  checkpoint starting: time
+2025-03-24 14:22:05 +07 LOG:  checkpoint complete: wrote 264 buffers (1.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=28.227 s, sync=0.029 s, total=28.261 s; sync files=69, longest=0.002 s, average=0.001 s; distance=1399 kB, estimate=1399 kB; lsn=0/D591C28, redo lsn=0/D582BF8
+2025-03-24 14:26:36 +07 LOG:  checkpoint starting: time
+2025-03-24 14:26:38 +07 LOG:  checkpoint complete: wrote 25 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=2.370 s, sync=0.016 s, total=2.391 s; sync files=22, longest=0.002 s, average=0.001 s; distance=91 kB, estimate=1268 kB; lsn=0/D599880, redo lsn=0/D599828
+2025-03-24 14:31:28 +07 LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-03-24 14:31:28 +07 LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-03-24 14:31:28 +07 LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-03-24 14:31:28 +07 LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-03-24 14:31:28 +07 LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-03-24 14:31:28 +07 LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2025-03-24 14:32:23 +07 ERROR:  canceling statement due to user request
+2025-03-24 14:32:23 +07 LOG:  shutting down
+2025-03-24 14:32:23 +07 LOG:  checkpoint starting: shutdown immediate
+2025-03-24 14:32:23 +07 LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.005 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=1141 kB; lsn=0/D599930, redo lsn=0/D599930
