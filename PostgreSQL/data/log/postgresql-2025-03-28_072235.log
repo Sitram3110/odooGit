@@ -1,0 +1,13 @@
+2025-03-28 07:22:35 +07 LOG:  database system was shut down at 2025-03-28 01:04:14 +07
+2025-03-28 07:27:35 +07 LOG:  checkpoint starting: time
+2025-03-28 07:27:35 +07 LOG:  checkpoint complete: wrote 2 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.002 s, total=0.012 s; sync files=3, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/EC434B8, redo lsn=0/EC43460
+2025-03-28 07:57:35 +07 LOG:  checkpoint starting: time
+2025-03-28 07:57:44 +07 LOG:  checkpoint complete: wrote 84 buffers (0.5%); 0 WAL file(s) added, 0 removed, 0 recycled; write=8.832 s, sync=0.027 s, total=8.865 s; sync files=63, longest=0.001 s, average=0.001 s; distance=202 kB, estimate=202 kB; lsn=0/EC75D60, redo lsn=0/EC75CD0
+2025-03-28 08:02:35 +07 LOG:  checkpoint starting: time
+2025-03-28 08:02:39 +07 LOG:  checkpoint complete: wrote 33 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=3.473 s, sync=0.016 s, total=3.496 s; sync files=30, longest=0.002 s, average=0.001 s; distance=87 kB, estimate=190 kB; lsn=0/ECAE7F8, redo lsn=0/EC8BC18
+2025-03-28 08:07:35 +07 LOG:  checkpoint starting: time
+2025-03-28 08:08:14 +07 LOG:  checkpoint complete: wrote 363 buffers (2.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=39.129 s, sync=0.054 s, total=39.186 s; sync files=131, longest=0.001 s, average=0.001 s; distance=1927 kB, estimate=1927 kB; lsn=0/EF11610, redo lsn=0/EE6DC08
+2025-03-28 08:12:35 +07 LOG:  checkpoint starting: time
+2025-03-28 08:15:21 +07 LOG:  checkpoint complete: wrote 1531 buffers (9.3%); 0 WAL file(s) added, 0 removed, 1 recycled; write=166.081 s, sync=0.150 s, total=166.237 s; sync files=386, longest=0.001 s, average=0.001 s; distance=9974 kB, estimate=9974 kB; lsn=0/F8419A0, redo lsn=0/F82B7F8
+2025-03-28 08:22:35 +07 LOG:  checkpoint starting: time
+2025-03-28 08:22:36 +07 LOG:  checkpoint complete: wrote 12 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.981 s, sync=0.007 s, total=0.993 s; sync files=11, longest=0.001 s, average=0.001 s; distance=93 kB, estimate=8986 kB; lsn=0/F842DE8, redo lsn=0/F842D90
